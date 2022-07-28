@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress run --env allure=true",
-    "cy:dashBoard:parallel:run": "cypress run --record --key=abc123 --parallel",
+    "cy:dashBoard:parallel:run": "cypress run --record --key=ipnri7 --parallel",
     "dbg": "cypress open",
     "allureServe": "allure serve",
     "allureCLIDownload": "brew install allure",
