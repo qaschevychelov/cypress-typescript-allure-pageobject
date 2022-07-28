@@ -8,6 +8,7 @@ export default defineConfig({
 });
 
 module.exports = defineConfig({
+  projectId: "ipnri7",
   e2e: {
       setupNodeEvents(on, config) {
         allureWriter(on, config);
