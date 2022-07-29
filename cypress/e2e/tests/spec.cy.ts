@@ -1,5 +1,5 @@
-import { homePage } from './pages/homePage'
-import { stepClass } from './steps/stepClass'
+import { homePage } from '../pages/homePage'
+import { stepClass } from '../steps/stepClass'
 
 describe('SMMTOUCH.TECH - домашняя', () => {
   beforeEach(() => {
