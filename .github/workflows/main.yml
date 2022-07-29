@@ -1,6 +1,9 @@
 name: Тестовый проект Cypress + TS + POM + Allure
 
-on: [push]
+on:
+  push:
+    branches-ignore:
+    - '!master'
 
 jobs:
   cypress-run:
