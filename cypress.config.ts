@@ -16,11 +16,6 @@ export default defineConfig({
           return launchOptions;
         }
       });
-      // Cypress.on('window:before:load', win => {
-      //     Object.defineProperty(win.navigator, 'language', { value: 'ru-RU' });
-      //     Object.defineProperty(win.navigator, 'languages', { value: ['ru'] });
-      //     Object.defineProperty(win.navigator, 'accept_languages', { value: ['ru'] });
-      // })
         return config;
     }
   },

@@ -21,7 +21,13 @@ require("cypress-real-events")
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
-
+declare global {
+  namespace Cypress {
+    interface Chainable<Subject> {
+      visit(url: string, options?: Object): Cypress.Chainable<Cypress.AUTWindow>
+    }
+  }
+}
 const app = window.top;
 if (!app.document.head.querySelector('[data-hide-command-log-request]')) {
   const style = app.document.createElement('style');

@@ -3,10 +3,12 @@ import { homePage } from "../pages/homePage";
 
 class StepClass {
     openBurger(): StepClass {
+        cy.allure().step("кликнуть на бургер меню", true)
         homePage.burgerBtn.click()
         return this
     }
     changeLang(lang: string): StepClass {
+        cy.allure().step(`Сменить язык на ${lang}`, true)
         homePage.langSwitcher.realHover()
         cy.contains(lang).click()
         return this
