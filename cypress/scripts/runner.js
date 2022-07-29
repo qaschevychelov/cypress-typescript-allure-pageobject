@@ -27,7 +27,6 @@ process.stdout.write(`Found ${initialSpecsCount} spec files\n`);
 
 /* execute cypress run for spec file */
 const cypressTask = (spec, envVariables) => {
-    console.log(`ЛОООООГ ПЕРЕМЕННЫЕ ${JSON.stringify(envVariables)}`)
     return new Promise((resolve, reject) => {
         cypress
             .run({
