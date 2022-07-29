@@ -6,4 +6,9 @@ export class BasePage {
     getBtnByText(btnName: string): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.xpath(`//button[normalize-space(.)='${btnName}']`)
     }
+
+    get langSwitcher(): Cypress.Chainable<JQuery<HTMLElement>> {
+        return cy.xpath("//div[contains(@class,'nav-lang')][span]")
+    }
+
 }

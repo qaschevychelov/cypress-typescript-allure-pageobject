@@ -9,10 +9,6 @@ class HomePage extends BasePage {
         return cy.xpath("//picture//img")
     }
 
-    get langSwitcher(): Cypress.Chainable<JQuery<HTMLElement>> {
-        return cy.xpath("//div[contains(@class,'nav-lang')][span]")
-    }
-
     get burgerBtn(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.xpath("//button[@class='burger-cross']")
     }

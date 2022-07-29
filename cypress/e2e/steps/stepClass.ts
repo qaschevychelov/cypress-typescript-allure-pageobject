@@ -2,7 +2,21 @@ import { loginPage } from "../pages/loginPage";
 import { homePage } from "../pages/homePage";
 
 class StepClass {
-    checkBtnIsVisible(btnName: string) {
+    openBurger(): StepClass {
+        homePage.burgerBtn.click()
+        return this
+    }
+    changeLang(lang: string): StepClass {
+        homePage.langSwitcher.realHover()
+        cy.contains(lang).click()
+        return this
+    }
+    clickBtn(btnName: string): StepClass {
+      cy.allure().step(`нажать кнопку ${btnName}`, true)
+      homePage.getBtnByText(btnName).realClick()
+      return this
+    }
+    checkBtnIsVisible(btnName: string): StepClass {
       cy.allure().step(`Кнопка '${btnName}' отображается`, true)
       homePage.getBtnByText(btnName).should("be.visible")
       return this

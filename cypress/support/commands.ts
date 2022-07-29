@@ -24,22 +24,20 @@
 //
 // -- This will overwrite an existing command --
 Cypress.Commands.overwrite('visit', (originalFn, url, options) => {
-    if (typeof url !== 'undefined' && typeof options !== 'undefined') {
+    if (typeof options !== 'undefined') {
         Object.assign(options, {
             headers: {
                 'Accept-Language': 'ru',
             }
         })
         originalFn(url, options)
-    } else if (typeof url === 'undefined' && typeof options !== 'undefined') {
-        Object.assign(options, {
+    } else {
+        options = {
             headers: {
                 'Accept-Language': 'ru',
             }
-        })
-        originalFn(options);
-    } else {
-        originalFn(url)
+        }
+        originalFn(url, options)
     }
 })
 //
