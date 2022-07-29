@@ -1,5 +1,5 @@
 class LoginPage {
-    getQuering(): Cypress.Chainable<JQuery<HTMLElement>> {
+    get quering(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.xpath("//li[normalize-space(.)='Querying']/a")
     }
 }

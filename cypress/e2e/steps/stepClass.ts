@@ -5,7 +5,7 @@ class StepClass {
     goToQuering(): StepClass {
         cy.allure().step("выполнили степ", true)
         
-        loginPage.getQuering().click({force: true})
+        loginPage.quering.click({force: true})
         return this
     }
 }
