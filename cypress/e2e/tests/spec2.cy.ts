@@ -1,9 +1,26 @@
-import { stepClass } from './steps/stepClass'
+import { burgerStep } from '../steps/burgerStep'
+import * as policy from '../../fixtures/confidentPolicy.json'
+import * as oferta from '../../fixtures/oferta.json'
+import * as returnPolicy from '../../fixtures/returnPolicy.json'
 
-describe('spec2', () => {
-  it('passes2', () => {
-    cy.visit('https://example.cypress.io', { failOnStatusCode: false })
-    stepClass.goToQuering()
-    cy.url().then((data) => cy.visit(`${data}/yyy`, { failOnStatusCode: false }))
+describe('SMMTOUCH.TECH - проверка соглашений', () => {
+  beforeEach(() => {
+    cy.visit('/');
+    burgerStep.openBurger()
+  });
+  it('политика конфиденциальности', () => {
+    burgerStep.clickLink("Политика конфиденциальности")
+      .checkAnyTextIsVisible(policy.ttl)
+      .checkAnyTextIsVisible(policy.body)
+  })
+  it('публичная оферта', () => {
+    burgerStep.clickLink("Публичная оферта")
+    .checkAnyTextIsVisible(oferta.ttl)
+    .checkAnyTextIsVisible(oferta.body)
+  })
+  it('политика возврата', () => {
+    burgerStep.clickLink("Политика возврата")
+    .checkAnyTextIsVisible(returnPolicy.ttl)
+    .checkAnyTextIsVisible(returnPolicy.body)
   })
 })

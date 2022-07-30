@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "allowJs": true,
+        "resolveJsonModule": true,
         "noEmit": true,
         "target": "es5",
         "lib": [

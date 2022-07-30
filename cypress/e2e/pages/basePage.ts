@@ -11,4 +11,8 @@ export class BasePage {
         return cy.xpath("//div[contains(@class,'nav-lang')][span]")
     }
 
+    getAnyText(text: string): Cypress.Chainable<JQuery<HTMLElement>> {
+        return cy.xpath(`//*[normalize-space(.)='${text}']`)
+    }
+
 }
