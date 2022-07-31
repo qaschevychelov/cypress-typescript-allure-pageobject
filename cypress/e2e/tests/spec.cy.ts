@@ -1,5 +1,6 @@
 import { homeStep } from '../steps/HomeStep'
 import { burgerStep } from '../steps/burgerStep'
+import * as errors from './../../fixtures/errors.json'
 
 describe('SMMTOUCH.TECH - домашняя', () => {
   beforeEach(() => {
@@ -18,7 +19,7 @@ describe('SMMTOUCH.TECH - домашняя', () => {
 
   it('отображается ошибка, если не ввести логин', () => {
     homeStep.clickBtn("Раскрутить Инстаграм")
-    cy.contains("Неверный логин. Посмотрите пример выше, он показывает, где находится ваше имя пользователя в инстаграм. ☝️").should("be.visible")
+    cy.contains(errors.emptyLogin).should("be.visible")
   })
 
   const langs = {

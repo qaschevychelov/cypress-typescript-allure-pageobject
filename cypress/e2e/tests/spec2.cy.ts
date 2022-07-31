@@ -2,6 +2,7 @@ import { burgerStep } from '../steps/burgerStep'
 import * as policy from '../../fixtures/confidentPolicy.json'
 import * as oferta from '../../fixtures/oferta.json'
 import * as returnPolicy from '../../fixtures/returnPolicy.json'
+
 describe('SMMTOUCH.TECH - проверка соглашений', () => {
   beforeEach(() => {
     cy.visit('/');
