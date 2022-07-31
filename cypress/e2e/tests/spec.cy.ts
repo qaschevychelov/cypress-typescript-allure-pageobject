@@ -1,6 +1,7 @@
 import { homeStep } from '../steps/HomeStep'
 import { burgerStep } from '../steps/burgerStep'
 import * as errors from './../../fixtures/errors.json'
+import * as langs from './../../fixtures/langs.json'
 
 describe('SMMTOUCH.TECH - домашняя', () => {
   beforeEach(() => {
@@ -21,17 +22,6 @@ describe('SMMTOUCH.TECH - домашняя', () => {
     homeStep.clickBtn("Раскрутить Инстаграм")
     cy.contains(errors.emptyLogin).should("be.visible")
   })
-
-  const langs = {
-    "English": "One step away from popularity",
-    "Deutsch": "Einen Schritt vom Ruhm entfernt",
-    "Español": "A un paso de la popularidad",
-    "Português": "A um passo da fama",
-    "Italiano": "A un passo dalla fama",
-    "Türkçe": "Popülerlikten bir adım uzakta",
-    "Українська": "В одному кроці від популярності",
-    "Русский": "В одном шаге от популярности"
-  }
 
   for (const lang in langs) {
     it(`можно переключить язык на ${lang}`, () => {
