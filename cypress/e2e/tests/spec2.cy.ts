@@ -22,6 +22,5 @@ describe('SMMTOUCH.TECH - проверка соглашений', () => {
     burgerStep.clickLink("Политика возврата")
       .checkAnyTextIsVisible(returnPolicy.ttl)
       .checkAnyTextIsVisible(returnPolicy.body)
-
   })
 })

@@ -1,6 +1,6 @@
 import {BasePage} from './basePage'
 
-class HomePage extends BasePage {
+class HomePage extends BasePage<HomePage> {
     get logo(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.xpath("(//header//a[.//*[contains(@clip-path, '#logo-colored')]])[1]")
     }

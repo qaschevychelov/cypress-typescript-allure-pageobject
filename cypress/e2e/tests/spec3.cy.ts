@@ -1,8 +1,12 @@
 import { baseStep } from '../steps/BaseStep'
 
-describe('spec3', () => {
+describe('SMMTOUCH.TECH - ', () => {
+  
+  beforeEach(() => {
+    cy.visit("/")
+  });
+  
   it('passes3', () => {
-    cy.visit('https://example.cypress.io', { failOnStatusCode: false })
-    cy.url().then((data) => cy.visit(`${data}/yyy`, { failOnStatusCode: false }))
+    
   })
 })

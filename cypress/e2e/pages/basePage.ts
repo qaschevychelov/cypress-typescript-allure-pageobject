@@ -1,4 +1,10 @@
-export class BasePage {
+export class BasePage<T> {
+    parent: T
+
+    constructor() {
+        this.parent = this as unknown as T
+    }
+    
     getInputByPlaceHolder(text: string): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.xpath(`//input[@placeholder='${text}']`)
     }
@@ -14,5 +20,4 @@ export class BasePage {
     getAnyText(text: string): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.xpath(`//*[normalize-space(.)='${text}']`)
     }
-
 }

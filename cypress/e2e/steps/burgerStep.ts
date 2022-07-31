@@ -1,7 +1,7 @@
 import { homePage } from "../pages/homePage";
 import { BaseStep } from "./BaseStep";
 
-class BurgerStep extends BaseStep {
+class BurgerStep extends BaseStep<BurgerStep> {
     checkPageBodyTextIsVisible(body: string): BurgerStep {
         cy.allure().step(`страница содержит текст`, true)
         cy.contains(body).should("be.visible")

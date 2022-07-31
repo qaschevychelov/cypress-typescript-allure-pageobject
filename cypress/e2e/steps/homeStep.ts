@@ -1,7 +1,7 @@
 import { BaseStep } from "./BaseStep";
 import { homePage } from "../pages/homePage";
 
-class HomeStep extends BaseStep {
+class HomeStep extends BaseStep<HomeStep> {
     checkBurgerBtnIsVisible(): HomeStep {
         cy.allure().step("Кнопка бургер отображается", true)
         homePage.burgerBtn.should("be.visible")

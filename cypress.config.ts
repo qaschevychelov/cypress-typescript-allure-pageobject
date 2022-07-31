@@ -5,6 +5,8 @@ export default defineConfig({
   projectId: "ipnri7",
   e2e: {
     baseUrl: 'https://smmtouch.tech',
+    pageLoadTimeout: 60000,
+    defaultCommandTimeout: 10000,
     setupNodeEvents(on, config) {
       allureWriter(on, config);
       on('before:browser:launch', (browser = Cypress.browser, launchOptions) => {
