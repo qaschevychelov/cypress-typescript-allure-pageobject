@@ -19,4 +19,4 @@ jobs:
         with:
           browser: chrome
           build: npm i
-          start: npm run cy:dashBoard:parallel:run
+          start: npm run cy2:run
